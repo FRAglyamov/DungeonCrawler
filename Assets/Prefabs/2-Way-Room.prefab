@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 33328374502671672}
   - component: {fileID: 114512598985167856}
   - component: {fileID: 64568574087132770}
+  - component: {fileID: 114556877803363220}
   m_Layer: 0
   m_Name: 2-Way-Room
   m_TagString: Untagged
@@ -1281,6 +1282,18 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114556877803363220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840707380166882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c75ad53088bf9a4a964d9aa19016445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corridor: {fileID: 1564499361284850, guid: 926e0a27f76c7834e97315984ea299f2, type: 2}
 --- !u!215 &215342431923527118
 ReflectionProbe:
   m_ObjectHideFlags: 1

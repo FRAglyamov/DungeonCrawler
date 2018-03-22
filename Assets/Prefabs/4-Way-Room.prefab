@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 33588960876487992}
   - component: {fileID: 114952251213289682}
   - component: {fileID: 64024626623137258}
+  - component: {fileID: 114874900808728314}
   m_Layer: 0
   m_Name: 4-Way-Room
   m_TagString: Untagged
@@ -237,6 +238,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114874900808728314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620214582382104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89a794ce655a654b99d576447ddfcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corridor: {fileID: 1564499361284850, guid: 926e0a27f76c7834e97315984ea299f2, type: 2}
 --- !u!114 &114952251213289682
 MonoBehaviour:
   m_ObjectHideFlags: 1

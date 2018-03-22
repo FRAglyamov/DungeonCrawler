@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e898e8e21f2b4004185804b87a1a7b8c
+timeCreated: 1521617656
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Room1: {fileID: 1665843576715194, guid: 3b41a3604427e784aa509c12c2238213, type: 2}
+  - Room2: {fileID: 1840707380166882, guid: 9072896db102411458afb6c6afc74616, type: 2}
+  - Room3: {fileID: 1620214582382104, guid: fbb46c55b95e1b44ca53fc84d70d981a, type: 2}
+  - Room4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
