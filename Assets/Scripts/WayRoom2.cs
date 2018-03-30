@@ -10,7 +10,7 @@ public class WayRoom2 : MonoBehaviour
     void Start()
     {
         transform.localScale = new Vector3(1f, 1f, 1f);
-        transform.localPosition = new Vector3(0f, 0f, 0.5f);
+        transform.localPosition = new Vector3(0f, 0f, 1f);
         transform.parent = null;
 
         tr = this.gameObject.GetComponent<Transform>();
