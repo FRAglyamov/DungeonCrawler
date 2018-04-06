@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 33707684366145188}
   - component: {fileID: 114989250810302208}
   - component: {fileID: 64350439802697010}
-  - component: {fileID: 114591336973514712}
+  - component: {fileID: 114144857893720018}
   m_Layer: 0
   m_Name: 1-Way-Room
   m_TagString: Untagged
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
---- !u!114 &114591336973514712
+--- !u!114 &114144857893720018
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -216,9 +216,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185309887420834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95dc9c3ed80de7841a50dd78cbc9fefb, type: 3}
+  m_Script: {fileID: 11500000, guid: fe1eb956965dbcc4483f8ec8666c4be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotation: {x: 0, y: 180, z: 0}
 --- !u!114 &114989250810302208
 MonoBehaviour:
   m_ObjectHideFlags: 1

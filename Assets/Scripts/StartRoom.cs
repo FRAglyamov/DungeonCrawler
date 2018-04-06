@@ -5,11 +5,9 @@ using UnityEngine;
 public class StartRoom : MonoBehaviour {
 
     public GameObject corridor;
-    Transform tr;
 
 	void Start ()
     {
-        tr = this.gameObject.GetComponent<Transform>();
-        Instantiate(corridor, tr.position, tr.rotation, this.tr);
+        Instantiate(corridor, transform.position + transform.forward * 4, transform.rotation);
 	}
 }

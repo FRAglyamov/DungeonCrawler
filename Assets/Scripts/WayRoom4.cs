@@ -7,20 +7,24 @@ public class WayRoom4 : MonoBehaviour {
     public GameObject corridor;
     public GameObject corridorLeft;
     public GameObject corridorRight;
-    Transform tr;
     void Start()
     {
-        transform.localScale = new Vector3(1f, 1f, 1f);
-        transform.localPosition = new Vector3(0f, 0f, 1f);
-        transform.parent = null;
 
-        tr = this.gameObject.GetComponent<Transform>();
-        Instantiate(corridor, tr.position, tr.rotation, this.tr);
-        Instantiate(corridorLeft, tr.position, tr.rotation, this.tr);
-        Instantiate(corridorRight, tr.position, tr.rotation, this.tr);
-        //Vector3 rotated = new Vector3(tr.rotation.eulerAngles.x, tr.rotation.eulerAngles.y + 90f, tr.rotation.eulerAngles.z);
-        //Vector3 rotated2 = new Vector3(tr.rotation.eulerAngles.x, tr.rotation.eulerAngles.y - 90f, tr.rotation.eulerAngles.z);
-        //Instantiate(corridor, tr.position, Quaternion.Euler(rotated));
-        //Instantiate(corridor, tr.position, Quaternion.Euler(rotated2));
+        Ray ray1 = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward * 4, transform.up * 10);
+        Ray ray2 = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.right * 4, transform.up * 10);
+        Ray ray3 = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z) - transform.right * 4, transform.up * 10);
+
+        if(!Physics.Raycast(ray1, 10f))
+        {
+            Instantiate(corridor, transform.position + transform.forward * 4, transform.rotation);
+        }
+        if (!Physics.Raycast(ray2, 10f))
+        {
+            Instantiate(corridorRight, transform.position + transform.right * 4, transform.rotation);
+        }
+        if (!Physics.Raycast(ray3, 10f))
+        {
+            Instantiate(corridorLeft, transform.position - transform.right * 4, transform.rotation);
+        }
     }
 }

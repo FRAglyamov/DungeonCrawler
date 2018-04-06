@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 33171300549611670}
   - component: {fileID: 114623179356049800}
   - component: {fileID: 64427199840355444}
-  - component: {fileID: 114164720062037266}
+  - component: {fileID: 114945603096975514}
+  - component: {fileID: 114698532593188410}
   m_Layer: 0
   m_Name: Corridor Right
   m_TagString: Untagged
@@ -196,20 +197,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114164720062037266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006506478156814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c40c0422e507a314fa6cc250945c4033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WayRoom1: {fileID: 1185309887420834, guid: 1ad2425800433f844bd8b97036864d8f, type: 2}
-  WayRoom2: {fileID: 1352846766713634, guid: c78cac3dc392eb44180c134e627ea90f, type: 2}
-  WayRoom4: {fileID: 1045297556210848, guid: f58095bb8aeed944b92b69bfe0289a6a, type: 2}
 --- !u!114 &114175689315445170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,6 +761,32 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114698532593188410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006506478156814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e898e8e21f2b4004185804b87a1a7b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WayRoom1: {fileID: 1185309887420834, guid: 1ad2425800433f844bd8b97036864d8f, type: 2}
+  WayRoom2: {fileID: 1352846766713634, guid: c78cac3dc392eb44180c134e627ea90f, type: 2}
+  WayRoom4: {fileID: 1045297556210848, guid: f58095bb8aeed944b92b69bfe0289a6a, type: 2}
+--- !u!114 &114945603096975514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006506478156814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1eb956965dbcc4483f8ec8666c4be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: {x: 0, y: 90, z: 0}
 --- !u!215 &215213113458649268
 ReflectionProbe:
   m_ObjectHideFlags: 1

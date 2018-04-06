@@ -8,30 +8,31 @@ public class FixCorridor : MonoBehaviour {
     public GameObject WayRoom2;
     public GameObject WayRoom4;
     GameController gc;
-    Transform tr;
 
     void Start ()
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        transform.localScale = new Vector3(1f, 1f, 1f);
-        transform.localPosition = new Vector3(0f, 0f, 1f);
-        transform.parent = null;
 
-        tr = this.gameObject.GetComponent<Transform>();
-        int rnd = Random.Range(0, 100);
-        if (rnd >50 && gc.WayRoom2 > 0)
+        Ray ray1 = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward * 4, transform.up * 10);
+        if (!Physics.Raycast(ray1, 10f))
         {
-                Instantiate(WayRoom2, tr.position, tr.rotation, this.tr);
+
+            int rnd = Random.Range(0, 100);
+            if (rnd > 50 && gc.WayRoom2 > 0)
+            {
+                Instantiate(WayRoom2, transform.position + transform.forward * 4, transform.rotation);
                 gc.WayRoom2 -= 1;
-        }
-        else if (gc.WayRoom4 > 0)
-        {
-            Instantiate(WayRoom4, tr.position, tr.rotation, this.tr);
-            gc.WayRoom4 -= 1;
-        }
-        else 
-        {
-            Instantiate(WayRoom1, tr.position, tr.rotation, this.tr);
+            }
+            else if (gc.WayRoom4 > 0)
+            {
+                Instantiate(WayRoom4, transform.position + transform.forward * 4, transform.rotation);
+                gc.WayRoom4 -= 1;
+            }
+            else
+            {
+                Instantiate(WayRoom1, transform.position + transform.forward * 4, transform.rotation);
+            }
+
         }
     }
 }
