@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1116
+  m_Name: pb_Mesh-14330
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -280,8 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d7424afe0d0594c9a175c8a91da921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WayRoom2: 20
-  WayRoom4: 20
+  WayRoom2: 10
+  WayRoom4: 10
 --- !u!1 &1291647347
 GameObject:
   m_ObjectHideFlags: 0

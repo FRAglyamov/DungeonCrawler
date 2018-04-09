@@ -14,9 +14,11 @@ public class FixCorridor : MonoBehaviour {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         Ray ray1 = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward * 4, transform.up * 10);
-        if (!Physics.Raycast(ray1, 10f))
-        {
+        Ray ray11 = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z) + transform.forward * 8, transform.up * 10);
 
+
+        if (!Physics.Raycast(ray1, 10f) && !Physics.Raycast(ray11, 10f))
+        {
             int rnd = Random.Range(0, 100);
             if (rnd > 50 && gc.WayRoom2 > 0)
             {
@@ -29,10 +31,9 @@ public class FixCorridor : MonoBehaviour {
                 gc.WayRoom4 -= 1;
             }
             else
-            {
                 Instantiate(WayRoom1, transform.position + transform.forward * 4, transform.rotation);
-            }
-
         }
+        else if (!Physics.Raycast(ray1, 10f))
+            Instantiate(WayRoom1, transform.position + transform.forward * 4, transform.rotation);
     }
 }
