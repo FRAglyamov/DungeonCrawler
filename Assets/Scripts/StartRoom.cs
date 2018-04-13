@@ -5,9 +5,15 @@ using UnityEngine;
 public class StartRoom : MonoBehaviour {
 
     public GameObject corridor;
+    GameController gc;
 
-	void Start ()
+    void Start ()
     {
-        Instantiate(corridor, transform.position + transform.forward * 4, transform.rotation);
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
+        if (!gc.isLoad)
+        {
+            Instantiate(corridor, transform.position + transform.forward * 4, transform.rotation);
+        }
 	}
 }

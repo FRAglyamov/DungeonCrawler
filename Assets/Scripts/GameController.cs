@@ -1,10 +1,85 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
+using System.IO;
+using UnityEditor;
 
 public class GameController : MonoBehaviour {
 
+    private string path;
+    public bool isLoad;
 
+    public List<SaveableObjects> objects = new List<SaveableObjects>();
     public int WayRoom2;
     public int WayRoom4;
+
+    private void Awake()
+    {
+        path = Application.dataPath + "/Saves/testsave.xml";
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Jump")) Save();
+        if (Input.GetKeyDown(KeyCode.Backspace)) Load();
+    }
+
+    public void Save()
+    {
+        XElement root = new XElement("root");
+
+
+        foreach(SaveableObjects obj in objects)
+        {
+            root.Add(obj.GetElement());
+        }
+
+        Debug.Log(root);
+
+        XDocument saveDoc = new XDocument(root);
+
+        File.WriteAllText(path, saveDoc.ToString());
+        Debug.Log(path);
+    }
+
+
+    public void Load()
+    {
+        isLoad = true;
+        XElement root = null;
+        if (File.Exists(path))
+        {
+            root = XDocument.Parse(File.ReadAllText(path)).Element("root");
+        }
+        if(root==null)
+        {
+            Debug.Log("Loading failed");
+            return;
+        }
+
+        GenerateScene(root);
+    }
+
+    private void GenerateScene(XElement root)
+    {
+
+        foreach (SaveableObjects obj in objects)
+        {
+            obj.DestroySelf();
+        }
+
+        foreach (XElement instance in root.Elements("instance"))
+        {
+            Vector3 position = Vector3.zero;
+
+            position.x = float.Parse(instance.Attribute("x").Value);
+            position.y = float.Parse(instance.Attribute("y").Value);
+            position.z = float.Parse(instance.Attribute("z").Value);
+            float rotation = float.Parse(instance.Attribute("rotation").Value);
+
+            Instantiate(Resources.Load<GameObject>(instance.Value), position, Quaternion.Euler(0f, rotation, 0f));
+
+        }
+    }
 }
