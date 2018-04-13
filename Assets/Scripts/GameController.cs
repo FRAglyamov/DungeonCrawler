@@ -10,9 +10,23 @@ public class GameController : MonoBehaviour {
     private string path;
     public bool isLoad;
 
-    public List<SaveableObjects> objects = new List<SaveableObjects>();
     public int WayRoom2;
     public int WayRoom4;
+
+    private static GameController _instance;
+    public static GameController Instance
+    {
+        get
+        {
+            if(_instance == null)
+            {
+                _instance = FindObjectOfType<GameController>();
+            }
+            return _instance;
+        }
+    }
+
+    public List<SaveableObjects> objects = new List<SaveableObjects>();
 
     private void Awake()
     {
@@ -68,7 +82,6 @@ public class GameController : MonoBehaviour {
         {
             obj.DestroySelf();
         }
-
         foreach (XElement instance in root.Elements("instance"))
         {
             Vector3 position = Vector3.zero;

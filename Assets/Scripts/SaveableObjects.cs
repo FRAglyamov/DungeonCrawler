@@ -8,21 +8,15 @@ public class SaveableObjects : MonoBehaviour {
     [SerializeField]
     private string objectName;
 
-    private GameController gc;
-
-    private void Awake()
-    {
-        gc = gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-    }
 
     private void Start()
     {
-        gc.objects.Add(this);
+        GameController.Instance.objects.Add(this);
     }
 
     private void OnDestroy()
     {
-        gc.objects.Remove(this);
+        GameController.Instance.objects.Remove(this);
     }
 
     public XElement GetElement()
