@@ -13,7 +13,7 @@ public class StartRoom : MonoBehaviour {
 
         if (!gc.isLoad)
         {
-            Instantiate(corridor, transform.position + transform.forward * 4, transform.rotation);
+            Instantiate(corridor, transform.position - transform.forward * 4, transform.rotation * Quaternion.Euler(0f, 180f, 0f));
         }
 	}
 }

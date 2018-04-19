@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using UnityEngine;
 using System.IO;
-using UnityEditor;
+using UnityEngine.AI;
 
 public class GameController : MonoBehaviour {
 
     private string path;
     public bool isLoad;
 
-    public int WayRoom2;
-    public int WayRoom4;
+    public NavMeshSurface surface;
+    bool isNavMeshBuild = false;
 
+    public int Corridor;
+    public int Hall;
+    public static int roomSize = 4;
     private static GameController _instance;
     public static GameController Instance
     {
@@ -37,6 +40,11 @@ public class GameController : MonoBehaviour {
     {
         if (Input.GetButton("Jump")) Save();
         if (Input.GetKeyDown(KeyCode.Backspace)) Load();
+        if (!isNavMeshBuild && Hall == 0 && Corridor == 0)
+        {
+            surface.BuildNavMesh();
+        }
+        
     }
 
     public void Save()
@@ -73,6 +81,7 @@ public class GameController : MonoBehaviour {
         }
 
         GenerateScene(root);
+        surface.BuildNavMesh();
     }
 
     private void GenerateScene(XElement root)
