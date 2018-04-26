@@ -16,7 +16,8 @@ public class SaveableObjects : MonoBehaviour {
 
     private void OnDestroy()
     {
-        GameController.Instance.objects.Remove(this);
+        if(GameController.Instance!=null)
+            GameController.Instance.objects.Remove(this);
     }
 
     public XElement GetElement()

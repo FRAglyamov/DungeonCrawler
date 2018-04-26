@@ -23,6 +23,8 @@ public class PauseMenu : MonoBehaviour {
                 Pause();
             }
         }
+
+        Map();
     }
 
     public void Pause()
@@ -50,5 +52,27 @@ public class PauseMenu : MonoBehaviour {
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public GameObject map;
+    public Camera mapCamera;
+
+    public void Map()
+    {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            if(!map.active)
+            {
+                map.SetActive(true);
+            }
+            else
+            {
+                map.SetActive(false);
+            }
+        }
+        if(map.active)
+        {
+            mapCamera.orthographicSize += Input.GetAxis("Mouse ScrollWheel") * 5;
+        }
     }
 }
