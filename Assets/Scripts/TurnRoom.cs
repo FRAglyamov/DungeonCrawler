@@ -37,15 +37,15 @@ public class TurnRoom : MonoBehaviour {
             if (!Physics.Raycast(ray1, 10f) && !Physics.Raycast(ray11, 10f))
             {
                 int rnd = Random.Range(0, 100);
-                if (rnd > 50 && GameController.Instance.Corridor > 0)
+                if (rnd > 50 && GameController.Instance.corridor > 0)
                 {
                     Instantiate(CorridorRoom, transform.position + transform.right * roomSize, transform.rotation);
-                    GameController.Instance.Corridor -= 1;
+                    GameController.Instance.corridor -= 1;
                 }
-                else if (GameController.Instance.Hall > 0)
+                else if (GameController.Instance.hall > 0)
                 {
                     Instantiate(Hall, transform.position + transform.right * roomSize, transform.rotation);
-                    GameController.Instance.Hall -= 1;
+                    GameController.Instance.hall -= 1;
                 }
                 else
                     Instantiate(EndRoom, transform.position + transform.right * roomSize, transform.rotation);

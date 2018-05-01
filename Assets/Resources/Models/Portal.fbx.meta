@@ -1,75 +1,60 @@
 fileFormatVersion: 2
-guid: 129deca5f8e153846b7a4e5327e8bfd5
-timeCreated: 1524044867
+guid: 08b53acce97bb1f4688ab74fc59b1064
+timeCreated: 1524824799
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Base
-    100002: Corridor
-    100004: Cube_003
+    100000: //RootNode
+    100002: Base
+    100004: Corridor
     100006: EndRoom
     100008: Hall
-    100010: //RootNode
-    100012: T-Room
-    100014: EndRoom_001
-    100016: CorridorToLeft
-    100018: TurnRoom
-    100020: Hall_001
-    100022: Portal
-    400000: Base
-    400002: Corridor
-    400004: Cube_003
+    100010: Hall.001
+    100012: Portal
+    100014: T-Room
+    100016: TurnRoom
+    400000: //RootNode
+    400002: Base
+    400004: Corridor
     400006: EndRoom
     400008: Hall
-    400010: //RootNode
-    400012: T-Room
-    400014: EndRoom_001
-    400016: CorridorToLeft
-    400018: TurnRoom
-    400020: Hall_001
-    400022: Portal
-    2300000: Base
-    2300002: Corridor
-    2300004: Cube_003
+    400010: Hall.001
+    400012: Portal
+    400014: T-Room
+    400016: TurnRoom
+    2300000: //RootNode
+    2300002: Base
+    2300004: Corridor
     2300006: EndRoom
     2300008: Hall
-    2300010: T-Room
-    2300012: EndRoom_001
-    2300014: CorridorToLeft
+    2300010: Hall.001
+    2300012: Portal
+    2300014: T-Room
     2300016: TurnRoom
-    2300018: Hall_001
-    2300020: Portal
-    3300000: Base
-    3300002: Corridor
-    3300004: Cube_003
+    3300000: //RootNode
+    3300002: Base
+    3300004: Corridor
     3300006: EndRoom
     3300008: Hall
-    3300010: T-Room
-    3300012: EndRoom_001
-    3300014: CorridorToLeft
+    3300010: Hall.001
+    3300012: Portal
+    3300014: T-Room
     3300016: TurnRoom
-    3300018: Hall_001
-    3300020: Portal
-    4300000: EndRoom
-    4300002: Base
-    4300004: Corridor
-    4300006: Hall
-    4300008: T-Room
-    4300010: Cube_003
-    4300012: EndRoom_001
-    4300014: CorridorToLeft
-    4300016: TurnRoom
-    4300018: Hall_001
-    4300020: Portal
-    7400000: Default Take
-    9500000: //RootNode
+    4300000: Portal
+    4300002: Hall.001
+    4300004: EndRoom
+    4300006: Base
+    4300008: Corridor
+    4300010: Hall
+    4300012: T-Room
+    4300014: TurnRoom
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 991e8ac6dea8acd4888586e6aed9a41d, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: c273b8b88d931b64da74c96c171e1dad, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -141,7 +126,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

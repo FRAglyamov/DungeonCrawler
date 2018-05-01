@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 64106327411226264}
   - component: {fileID: 114293085473819442}
   - component: {fileID: 114560646348481804}
+  - component: {fileID: 65385709371234586}
+  - component: {fileID: 114745991327746692}
   m_Layer: 0
   m_Name: Hall
   m_TagString: Untagged
@@ -63,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1847993114473142
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +233,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: e0e13c0a7996e3e4287fc002c58f566b, type: 3}
+--- !u!65 &65385709371234586
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677063910706364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 5, z: 8}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!108 &108515083034923374
 Light:
   m_ObjectHideFlags: 1
@@ -278,9 +292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89a794ce655a654b99d576447ddfcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corridor: {fileID: 1601204774035606, guid: ca5288d48a2524a42a09e61066d49b3d, type: 2}
-  EndRoom: {fileID: 1968939394127094, guid: ff5a28d0309da6447a51f3250e615b6a, type: 2}
-  HallRoom: {fileID: 1677063910706364}
+  corridor: {fileID: 1601204774035606, guid: ca5288d48a2524a42a09e61066d49b3d, type: 2}
+  endRoom: {fileID: 1968939394127094, guid: ff5a28d0309da6447a51f3250e615b6a, type: 2}
+  hall: {fileID: 1677063910706364}
 --- !u!114 &114560646348481804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,6 +307,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: Hall
+--- !u!114 &114745991327746692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677063910706364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb82e4773ce01945ab5a05aa1f9c38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!215 &215837416762770860
 ReflectionProbe:
   m_ObjectHideFlags: 1

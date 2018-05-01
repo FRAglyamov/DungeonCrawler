@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour {
         Application.Quit();
     }
 
+    public GameObject minimap;
     public GameObject map;
     public Camera mapCamera;
 
@@ -61,16 +62,18 @@ public class PauseMenu : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.M))
         {
-            if(!map.active)
+            if(!map.activeInHierarchy)
             {
                 map.SetActive(true);
+                minimap.SetActive(false);
             }
             else
             {
                 map.SetActive(false);
+                minimap.SetActive(true);
             }
         }
-        if(map.active)
+        if(map.activeInHierarchy)
         {
             mapCamera.orthographicSize += Input.GetAxis("Mouse ScrollWheel") * 5;
         }

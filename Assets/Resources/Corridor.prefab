@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1390422173582300
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +73,8 @@ GameObject:
   - component: {fileID: 64047013930446462}
   - component: {fileID: 114784547934201920}
   - component: {fileID: 114467600859044330}
+  - component: {fileID: 65074893543465152}
+  - component: {fileID: 114139477749030392}
   m_Layer: 0
   m_Name: Corridor
   m_TagString: Untagged
@@ -231,6 +233,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: 0a6d1e0782b6f4a468d493478d254c60, type: 3}
+--- !u!65 &65074893543465152
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601204774035606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 5, z: 8}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!108 &108135910876202092
 Light:
   m_ObjectHideFlags: 1
@@ -267,6 +281,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114139477749030392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601204774035606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb82e4773ce01945ab5a05aa1f9c38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114467600859044330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,9 +315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e898e8e21f2b4004185804b87a1a7b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndRoom: {fileID: 1968939394127094, guid: ff5a28d0309da6447a51f3250e615b6a, type: 2}
-  CorridorRoom: {fileID: 1601204774035606}
-  Hall: {fileID: 1677063910706364, guid: ba2ce207a7dc6f142a0d858b888c0794, type: 2}
+  endRoom: {fileID: 1968939394127094, guid: ff5a28d0309da6447a51f3250e615b6a, type: 2}
+  corridor: {fileID: 1601204774035606}
+  hall: {fileID: 1677063910706364, guid: ba2ce207a7dc6f142a0d858b888c0794, type: 2}
 --- !u!215 &215560366569668154
 ReflectionProbe:
   m_ObjectHideFlags: 1

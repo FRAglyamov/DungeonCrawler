@@ -11,10 +11,12 @@ public class GameController : MonoBehaviour {
     public bool isLoad;
 
     public NavMeshSurface surface;
-    bool isNavMeshBuild = false;
+    public bool isNavMeshBuild = false;
 
-    public int Corridor;
-    public int Hall;
+    public int corridor;
+    public int hall;
+    public int endDungeon;
+    public int enemy;
     public static int roomSize = 4;
     private static GameController _instance;
     public static GameController Instance
@@ -40,9 +42,11 @@ public class GameController : MonoBehaviour {
     {
         if (Input.GetButton("Jump")) Save();
         if (Input.GetKeyDown(KeyCode.Backspace)) Load();
-        if (!isNavMeshBuild && Hall == 0 && Corridor == 0)
+        if (!isNavMeshBuild && hall == 0 && corridor == 0 && endDungeon == 0 && enemy == 0)
         {
             surface.BuildNavMesh();
+            Save();
+            isNavMeshBuild = true;
         }
         
     }

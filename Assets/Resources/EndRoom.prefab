@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1274294176332348
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,6 +72,9 @@ GameObject:
   - component: {fileID: 23343917385572190}
   - component: {fileID: 64043720002147718}
   - component: {fileID: 114741616050302056}
+  - component: {fileID: 114176519726327946}
+  - component: {fileID: 65541326053998712}
+  - component: {fileID: 114981018007268382}
   m_Layer: 0
   m_Name: EndRoom
   m_TagString: Untagged
@@ -230,6 +233,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0402e8bc15f73334b8e3575581969154, type: 3}
+--- !u!65 &65541326053998712
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968939394127094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 5, z: 8}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!108 &108255289073602222
 Light:
   m_ObjectHideFlags: 1
@@ -266,6 +281,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114176519726327946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968939394127094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8269856b60abbb44eb8fb8f0ffb1d186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portal: {fileID: 1940358962711456, guid: 70487f59fd3c39545a8a80b7600099b3, type: 2}
+  enemy: {fileID: 1855203986737768, guid: 05ee764cd58ed8a41922b3f6aac2d5de, type: 2}
 --- !u!114 &114741616050302056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +306,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: EndRoom
+--- !u!114 &114981018007268382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968939394127094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb82e4773ce01945ab5a05aa1f9c38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!215 &215279925154508268
 ReflectionProbe:
   m_ObjectHideFlags: 1

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Corridor : MonoBehaviour {
 
-    public GameObject EndRoom;
-    public GameObject CorridorRoom;
-    public GameObject Hall;
+    public GameObject endRoom;
+    public GameObject corridor;
+    public GameObject hall;
 
     void Start ()
     {
@@ -25,7 +25,7 @@ public class Corridor : MonoBehaviour {
                     || (hit.transform.name.StartsWith("Corridor")&& (hit.transform.rotation != transform.rotation)))
                 {
                     Debug.DrawRay(transform.position, transform.up, Color.red, 200f);
-                    Instantiate(EndRoom, transform.position, transform.rotation);
+                    Instantiate(endRoom, transform.position, transform.rotation);
                     Destroy(gameObject);
                 }
             }
@@ -33,21 +33,21 @@ public class Corridor : MonoBehaviour {
             if (!Physics.Raycast(ray1, 10f) && !Physics.Raycast(ray11, 10f))
             {
                 int rnd = Random.Range(0, 100);
-                if (rnd > 50 && GameController.Instance.Corridor > 0)
+                if (rnd > 50 && GameController.Instance.corridor > 0)
                 {
-                    Instantiate(CorridorRoom, transform.position + transform.forward * roomSize, transform.rotation);
-                    GameController.Instance.Corridor -= 1;
+                    Instantiate(corridor, transform.position + transform.forward * roomSize, transform.rotation);
+                    GameController.Instance.corridor -= 1;
                 }
-                else if (GameController.Instance.Hall > 0)
+                else if (GameController.Instance.hall > 0)
                 {
-                    Instantiate(Hall, transform.position + transform.forward * roomSize, transform.rotation);
-                    GameController.Instance.Hall -= 1;
+                    Instantiate(hall, transform.position + transform.forward * roomSize, transform.rotation);
+                    GameController.Instance.hall -= 1;
                 }
                 else
-                    Instantiate(EndRoom, transform.position + transform.forward * roomSize, transform.rotation);
+                    Instantiate(endRoom, transform.position + transform.forward * roomSize, transform.rotation);
             }
             else if (!Physics.Raycast(ray1, 10f))
-                Instantiate(EndRoom, transform.position + transform.forward * roomSize, transform.rotation);
+                Instantiate(endRoom, transform.position + transform.forward * roomSize, transform.rotation);
         }
     }
 }
