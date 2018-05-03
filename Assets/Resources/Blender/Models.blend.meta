@@ -17,6 +17,94 @@ ModelImporter:
     100018: TurnRoom
     100020: Hall_001
     100022: Portal
+    100024: Armature
+    100026: Bone
+    100028: Bone_00
+    100030: Bone_01
+    100032: Bone_02
+    100034: Bone_03
+    100036: Bone_04
+    100038: Bone_05
+    100040: Bone_06
+    100042: Bone_07
+    100044: Bone_08
+    100046: Bone_09
+    100048: Bone_10
+    100050: Bone_11
+    100052: Bone_12
+    100054: Bone_13
+    100056: Bone_14
+    100058: Bone_15
+    100060: Bone_16
+    100062: Bone_17
+    100064: Bone_18
+    100066: Bone_19
+    100068: Bone_20
+    100070: Bone_21
+    100072: Bone_22
+    100074: Bone_23
+    100076: Bone_24
+    100078: Bone_25
+    100080: Bone_26
+    100082: Bone_27
+    100084: Bone_28
+    100086: Bone_29
+    100088: Bone_30
+    100090: Bone_31
+    100092: Bone_32
+    100094: Bone_33
+    100096: Bone_34
+    100098: Bone_35
+    100100: Bone_36
+    100102: Bone_37
+    100104: Bone_38
+    100106: Bone_39
+    100108: Bone_40
+    100110: Bone_41
+    100112: Bone_42
+    100114: Bone_43
+    100116: Bone_45
+    100118: Bone_46
+    100120: Bone_47
+    100122: Bone_48
+    100124: Bone_49
+    100126: Bone_50
+    100128: Bone_51
+    100130: Bone_52
+    100132: Bone_53
+    100134: Bone_54
+    100136: Bone_55
+    100138: Bone_56
+    100140: Bone_57
+    100142: Bone_58
+    100144: Bone_59
+    100146: Bone_60
+    100148: Bone_61
+    100150: Bone_62
+    100152: Bone_63
+    100154: Bone_64
+    100156: Bone_65
+    100158: Bone_66
+    100160: Bone_67
+    100162: Bone_68
+    100164: Bone_69
+    100166: Bone_70
+    100168: Bone_71
+    100170: Bone_72
+    100172: Bone_73
+    100174: Bone_74
+    100176: Bone_75
+    100178: Bone_76
+    100180: Bone_77
+    100182: Bone_78
+    100184: Bone_79
+    100186: Bone_80
+    100188: Bone_81
+    100190: Bone_82
+    100192: Character
+    100194: Character_001
+    100196: Cube
+    100198: Plane
     400000: Base
     400002: Corridor
     400004: Cube_003
@@ -29,6 +117,94 @@ ModelImporter:
     400018: TurnRoom
     400020: Hall_001
     400022: Portal
+    400024: Armature
+    400026: Bone
+    400028: Bone_00
+    400030: Bone_01
+    400032: Bone_02
+    400034: Bone_03
+    400036: Bone_04
+    400038: Bone_05
+    400040: Bone_06
+    400042: Bone_07
+    400044: Bone_08
+    400046: Bone_09
+    400048: Bone_10
+    400050: Bone_11
+    400052: Bone_12
+    400054: Bone_13
+    400056: Bone_14
+    400058: Bone_15
+    400060: Bone_16
+    400062: Bone_17
+    400064: Bone_18
+    400066: Bone_19
+    400068: Bone_20
+    400070: Bone_21
+    400072: Bone_22
+    400074: Bone_23
+    400076: Bone_24
+    400078: Bone_25
+    400080: Bone_26
+    400082: Bone_27
+    400084: Bone_28
+    400086: Bone_29
+    400088: Bone_30
+    400090: Bone_31
+    400092: Bone_32
+    400094: Bone_33
+    400096: Bone_34
+    400098: Bone_35
+    400100: Bone_36
+    400102: Bone_37
+    400104: Bone_38
+    400106: Bone_39
+    400108: Bone_40
+    400110: Bone_41
+    400112: Bone_42
+    400114: Bone_43
+    400116: Bone_45
+    400118: Bone_46
+    400120: Bone_47
+    400122: Bone_48
+    400124: Bone_49
+    400126: Bone_50
+    400128: Bone_51
+    400130: Bone_52
+    400132: Bone_53
+    400134: Bone_54
+    400136: Bone_55
+    400138: Bone_56
+    400140: Bone_57
+    400142: Bone_58
+    400144: Bone_59
+    400146: Bone_60
+    400148: Bone_61
+    400150: Bone_62
+    400152: Bone_63
+    400154: Bone_64
+    400156: Bone_65
+    400158: Bone_66
+    400160: Bone_67
+    400162: Bone_68
+    400164: Bone_69
+    400166: Bone_70
+    400168: Bone_71
+    400170: Bone_72
+    400172: Bone_73
+    400174: Bone_74
+    400176: Bone_75
+    400178: Bone_76
+    400180: Bone_77
+    400182: Bone_78
+    400184: Bone_79
+    400186: Bone_80
+    400188: Bone_81
+    400190: Bone_82
+    400192: Character
+    400194: Character_001
+    400196: Cube
+    400198: Plane
     2300000: Base
     2300002: Corridor
     2300004: Cube_003
@@ -40,6 +216,9 @@ ModelImporter:
     2300016: TurnRoom
     2300018: Hall_001
     2300020: Portal
+    2300022: Character
+    2300024: Cube
+    2300026: Plane
     3300000: Base
     3300002: Corridor
     3300004: Cube_003
@@ -51,6 +230,9 @@ ModelImporter:
     3300016: TurnRoom
     3300018: Hall_001
     3300020: Portal
+    3300022: Character
+    3300024: Cube
+    3300026: Plane
     4300000: EndRoom
     4300002: Base
     4300004: Corridor
@@ -62,8 +244,13 @@ ModelImporter:
     4300016: TurnRoom
     4300018: Hall_001
     4300020: Portal
+    4300022: Plane
+    4300024: Cube
+    4300026: Character_001
+    4300028: Character
     7400000: Default Take
     9500000: //RootNode
+    13700000: Character_001
   externalObjects:
   - first:
       type: UnityEngine:Material
