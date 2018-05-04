@@ -105,6 +105,27 @@ ModelImporter:
     100194: Character_001
     100196: Cube
     100198: Plane
+    100200: Armature_Backup
+    100202: Character_Backup
+    100204: Chest
+    100206: Control
+    100208: Foot_L
+    100210: Foot_R
+    100212: Head
+    100214: Leg_IK_L
+    100216: Leg_IK_R
+    100218: Lower_Arm_L
+    100220: Lower_Arm_R
+    100222: Lower_Leg_L
+    100224: Lower_Leg_R
+    100226: Neck
+    100228: Palm_L
+    100230: Palm_R
+    100232: Stomach
+    100234: Upper_Arm_L
+    100236: Upper_Arm_R
+    100238: Upper_Leg_L
+    100240: Upper_Leg_R
     400000: Base
     400002: Corridor
     400004: Cube_003
@@ -205,6 +226,27 @@ ModelImporter:
     400194: Character_001
     400196: Cube
     400198: Plane
+    400200: Armature_Backup
+    400202: Character_Backup
+    400204: Chest
+    400206: Control
+    400208: Foot_L
+    400210: Foot_R
+    400212: Head
+    400214: Leg_IK_L
+    400216: Leg_IK_R
+    400218: Lower_Arm_L
+    400220: Lower_Arm_R
+    400222: Lower_Leg_L
+    400224: Lower_Leg_R
+    400226: Neck
+    400228: Palm_L
+    400230: Palm_R
+    400232: Stomach
+    400234: Upper_Arm_L
+    400236: Upper_Arm_R
+    400238: Upper_Leg_L
+    400240: Upper_Leg_R
     2300000: Base
     2300002: Corridor
     2300004: Cube_003
@@ -219,6 +261,7 @@ ModelImporter:
     2300022: Character
     2300024: Cube
     2300026: Plane
+    2300028: Character_Backup
     3300000: Base
     3300002: Corridor
     3300004: Cube_003
@@ -233,6 +276,7 @@ ModelImporter:
     3300022: Character
     3300024: Cube
     3300026: Plane
+    3300028: Character_Backup
     4300000: EndRoom
     4300002: Base
     4300004: Corridor
@@ -248,6 +292,7 @@ ModelImporter:
     4300024: Cube
     4300026: Character_001
     4300028: Character
+    4300030: Character_Backup
     7400000: Default Take
     9500000: //RootNode
     13700000: Character_001
