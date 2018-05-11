@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour {
 
     public LayerMask enemyMask;
 
+    Animator anim;
+    float attackRate = 1f;
+    float nextAttackTime = 0f;
+
     private Rigidbody _rb;
 
     public Rigidbody rb
@@ -32,6 +36,7 @@ public class PlayerController : MonoBehaviour {
     private void Start()
     {
         healthSlider.value = curHealth;
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -43,14 +48,17 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         transform.Rotate(0f, Input.GetAxis("Horizontal") * turningSpeed, 0f);
+        anim.SetFloat("speed", Input.GetAxis("Vertical"));
         rb.velocity = transform.rotation * new Vector3(0f, 0f, Input.GetAxis("Vertical")) * speed;
 
     }
 
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1) && Time.time > nextAttackTime)
         {
+            anim.SetTrigger("attack1");
+            nextAttackTime = Time.time + attackRate;
             Collider[] hittedEnemy = Physics.OverlapBox(transform.position + transform.forward, new Vector3(1f, 0.5f, 0.5f), transform.rotation, enemyMask);
             foreach (Collider enemy in hittedEnemy)
             {
@@ -58,6 +66,7 @@ public class PlayerController : MonoBehaviour {
                 if (enemy.GetComponent<GhostController>() != null)
                     enemy.GetComponent<GhostController>().health -= 50;
             }
+            //anim.SetBool("attack1", false);
         }
     }
     void BowAttack()
@@ -67,22 +76,17 @@ public class PlayerController : MonoBehaviour {
             //Instantiate(arrow, hand.position, Quaternion.identity);
         }
     }
-
-    //Camera cam;
-    //private void Start()
-    //{
-    //    cam = Camera.main;
-    //}
-    //private void Update()
-    //{
-    //    if(Input.GetMouseButtonDown(0))
-    //    {
-    //        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-    //        RaycastHit hit;
-    //        if(Physics.Raycast(ray, out hit))
-    //        {
-
-    //        }
-    //    }
-    //}
+    void Death()
+    {
+        if (curHealth <= 0)
+        {
+            anim.SetTrigger("death");
+            gameObject.GetComponent<PlayerController>().enabled = false;
+        }
+    }
+    public void Damaged(int damage)
+    {
+        anim.SetTrigger("damaged");
+        curHealth -= damage;
+    }
 }
