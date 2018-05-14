@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
     Animator anim;
     float attackRate = 1f;
-    float nextAttackTime = 0f;
+    float nextAttackTime = 1f;
 
     private Rigidbody _rb;
 
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Start()
     {
+        curHealth = maxHealth;
         healthSlider.value = curHealth;
         anim = GetComponent<Animator>();
     }
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour {
     {
         Attack();
         BowAttack();
+        Death();
     }
 
     void FixedUpdate()
@@ -57,16 +59,15 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1) && Time.time > nextAttackTime)
         {
-            anim.SetTrigger("attack1");
+            anim.SetTrigger("attack2");
             nextAttackTime = Time.time + attackRate;
             Collider[] hittedEnemy = Physics.OverlapBox(transform.position + transform.forward, new Vector3(1f, 0.5f, 0.5f), transform.rotation, enemyMask);
             foreach (Collider enemy in hittedEnemy)
             {
                 Debug.Log(enemy.name);
-                if (enemy.GetComponent<GhostController>() != null)
-                    enemy.GetComponent<GhostController>().health -= 50;
+                if (enemy.GetComponent<EnemyController>() != null)
+                    enemy.GetComponent<EnemyController>().health -= 50;
             }
-            //anim.SetBool("attack1", false);
         }
     }
     void BowAttack()
@@ -88,5 +89,6 @@ public class PlayerController : MonoBehaviour {
     {
         anim.SetTrigger("damaged");
         curHealth -= damage;
+        this.healthSlider.value = curHealth;
     }
 }

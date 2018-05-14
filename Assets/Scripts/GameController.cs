@@ -35,20 +35,19 @@ public class GameController : MonoBehaviour {
 
     private void Awake()
     {
-        path = Application.dataPath + "/Saves/testsave.xml";
+        path = Application.dataPath + "testsave.xml";
     }
 
     private void Update()
     {
-        if (Input.GetButton("Jump")) Save();
-        if (Input.GetKeyDown(KeyCode.Backspace)) Load();
+        //if (Input.GetButton("Jump")) Save();
+        //if (Input.GetKeyDown(KeyCode.Backspace)) Load();
         if (!isNavMeshBuild && hall == 0 && corridor == 0 && endDungeon == 0 && enemy == 0)
         {
             surface.BuildNavMesh();
-            Save();
+            //Save();
             isNavMeshBuild = true;
         }
-        
     }
 
     public void Save()
@@ -64,7 +63,6 @@ public class GameController : MonoBehaviour {
         Debug.Log(root);
 
         XDocument saveDoc = new XDocument(root);
-
         File.WriteAllText(path, saveDoc.ToString());
         Debug.Log(path);
     }
