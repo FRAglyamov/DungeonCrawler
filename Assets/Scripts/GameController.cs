@@ -12,11 +12,14 @@ public class GameController : MonoBehaviour {
 
     public NavMeshSurface surface;
     public bool isNavMeshBuild = false;
+    public bool isSpawnObjects = false;
 
     public int corridor;
     public int hall;
     public int endDungeon;
     public int enemy;
+    public GameObject portal;
+    public GameObject meleeEnemy;
     public static int roomSize = 4;
     private static GameController _instance;
     public static GameController Instance
@@ -38,6 +41,11 @@ public class GameController : MonoBehaviour {
         path = Application.dataPath + "testsave.xml";
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         //if (Input.GetButton("Jump")) Save();
@@ -48,6 +56,7 @@ public class GameController : MonoBehaviour {
             //Save();
             isNavMeshBuild = true;
         }
+        SpawnObjects(isSpawnObjects);
     }
 
     public void Save()
@@ -104,6 +113,41 @@ public class GameController : MonoBehaviour {
 
             Instantiate(Resources.Load<GameObject>(instance.Value), position, Quaternion.Euler(0f, rotation, 0f));
 
+        }
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //if(player!=null)
+        //{
+
+        //}
+    }
+
+    void SpawnObjects(bool isSpawnObjects)
+    {
+        if (Time.time > 2f && !isSpawnObjects)
+        {
+            List<SaveableObjects> spawnList = objects;
+            foreach (var item in spawnList)
+            {
+                if (item.objectName != "EndRoom" || item.objectName != "Corridor" || item.objectName != "Hall")
+                {
+                    spawnList.Remove(item);
+                }
+            }
+
+            for (int i = 0; i < endDungeon; i++)
+            {
+                int rnd = Random.Range(0, spawnList.Capacity - i);
+                Instantiate(portal, spawnList[i].transform.position, Quaternion.identity);
+                spawnList.Remove(spawnList[rnd]);
+            }
+            for (int i = 0; i < enemy; i++)
+            {
+                int rnd = Random.Range(0, spawnList.Capacity);
+                Instantiate(meleeEnemy, spawnList[i].transform.position, Quaternion.identity);
+                spawnList.Remove(spawnList[rnd]);
+            }
+
+            isSpawnObjects = true;
         }
     }
 }

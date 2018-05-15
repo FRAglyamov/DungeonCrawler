@@ -6,7 +6,7 @@ using UnityEngine;
 public class SaveableObjects : MonoBehaviour {
 
     [SerializeField]
-    private string objectName;
+    public string objectName;
 
 
     private void Start()

@@ -30,11 +30,20 @@ public class EnemyController : MonoBehaviour {
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        MoveToPlayer();
+        //MoveToPlayer();
         Attack();
         Death();
 	}
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Player")
+        {
+            player = other.gameObject;
+            MoveToPlayer();
+        }
+    }
 
     void MoveToPlayer()
     {

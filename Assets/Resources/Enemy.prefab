@@ -1498,6 +1498,7 @@ GameObject:
   - component: {fileID: 95840795347279230}
   - component: {fileID: 136198666659177986}
   - component: {fileID: 195036929430029884}
+  - component: {fileID: 135369600480298030}
   - component: {fileID: 114122863165773676}
   - component: {fileID: 114028810949676130}
   m_Layer: 10
@@ -3750,6 +3751,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!135 &135369600480298030
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816031434445232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136198666659177986
 CapsuleCollider:
   m_ObjectHideFlags: 1
