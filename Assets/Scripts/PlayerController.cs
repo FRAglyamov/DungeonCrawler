@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour {
 
     public LayerMask enemyMask;
 
+    AudioManager audioManager;
+
     Animator anim;
-    float attackRate = 1f;
+    float attackRate = 1.5f;
     float nextAttackTime = 1f;
+    public GameObject spear;
+    public GameObject hand;
 
     private Rigidbody _rb;
 
@@ -38,12 +42,17 @@ public class PlayerController : MonoBehaviour {
         curHealth = maxHealth;
         healthSlider.value = curHealth;
         anim = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
 
     private void Update()
     {
+        if (curHealth > maxHealth)
+        {
+            curHealth = maxHealth;
+        }
         Attack();
-        BowAttack();
+        //RangeAttack();
         Death();
     }
 
@@ -57,9 +66,10 @@ public class PlayerController : MonoBehaviour {
 
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && !Input.GetMouseButton(1) && Time.time > nextAttackTime)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextAttackTime)
         {
             anim.SetTrigger("attack2");
+            audioManager.Play("PlayerAttack");
             nextAttackTime = Time.time + attackRate;
             Collider[] hittedEnemy = Physics.OverlapBox(transform.position + transform.forward, new Vector3(1f, 0.5f, 0.5f), transform.rotation, enemyMask);
             foreach (Collider enemy in hittedEnemy)
@@ -67,14 +77,18 @@ public class PlayerController : MonoBehaviour {
                 Debug.Log(enemy.name);
                 if (enemy.GetComponent<EnemyController>() != null)
                     enemy.GetComponent<EnemyController>().health -= 50;
+                if (enemy.GetComponent<RangeEnemyController>() != null)
+                    enemy.GetComponent<RangeEnemyController>().health -= 50;
             }
         }
     }
-    void BowAttack()
+    void RangeAttack()
     {
-        if (Input.GetMouseButton(1) && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1) && Time.time > nextAttackTime)
         {
-            //Instantiate(arrow, hand.position, Quaternion.identity);
+            anim.SetTrigger("attack1");
+            nextAttackTime = Time.time + attackRate;
+            Instantiate(spear, hand.transform.position, Quaternion.identity);
         }
     }
     void Death()
@@ -83,12 +97,18 @@ public class PlayerController : MonoBehaviour {
         {
             anim.SetTrigger("death");
             gameObject.GetComponent<PlayerController>().enabled = false;
+            audioManager.Play("Game Over");
         }
     }
     public void Damaged(int damage)
     {
         anim.SetTrigger("damaged");
         curHealth -= damage;
+        this.healthSlider.value = curHealth;
+    }
+    public void Healed(int heal)
+    {
+        curHealth += heal;
         this.healthSlider.value = curHealth;
     }
 }

@@ -127,6 +127,9 @@ ModelImporter:
     100238: Upper_Leg_L
     100240: Upper_Leg_R
     100242: RangeEnemy
+    100244: RangeEnemy_Attack
+    100246: Circle
+    100248: Plate_with_oranges
     400000: Base
     400002: Corridor
     400004: Cube_003
@@ -249,6 +252,9 @@ ModelImporter:
     400238: Upper_Leg_L
     400240: Upper_Leg_R
     400242: RangeEnemy
+    400244: RangeEnemy_Attack
+    400246: Circle
+    400248: Plate_with_oranges
     2300000: Base
     2300002: Corridor
     2300004: Cube_003
@@ -265,6 +271,9 @@ ModelImporter:
     2300026: Plane
     2300028: Character_Backup
     2300030: RangeEnemy
+    2300032: RangeEnemy_Attack
+    2300034: Circle
+    2300036: Plate_with_oranges
     3300000: Base
     3300002: Corridor
     3300004: Cube_003
@@ -281,6 +290,9 @@ ModelImporter:
     3300026: Plane
     3300028: Character_Backup
     3300030: RangeEnemy
+    3300032: RangeEnemy_Attack
+    3300034: Circle
+    3300036: Plate_with_oranges
     4300000: EndRoom
     4300002: Base
     4300004: Corridor
@@ -298,6 +310,9 @@ ModelImporter:
     4300028: Character
     4300030: Character_Backup
     4300032: RangeEnemy
+    4300034: RangeEnemy_Attack
+    4300036: Circle
+    4300038: Plate_with_oranges
     7400000: Default Take
     9500000: //RootNode
     13700000: Character_001
@@ -305,8 +320,58 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 0d3242e68f2ed6240a2c5e7e2bc2dbfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: 614909589f2331849ab251bfa7a8288f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Halo
+    second: {fileID: 2100000, guid: 40a2ba689d62e5b409729448e3c9e6eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oranges
+    second: {fileID: 2100000, guid: 918f6531130ddd94e90d3ab67d56d95b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plate
+    second: {fileID: 2100000, guid: 562254e4c72832846a946777b05db2a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Portal
+    second: {fileID: 2100000, guid: f0ddc8b34c0cc2144a863501ca2c9f24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Postament
+    second: {fileID: 2100000, guid: 1033581a908ab6a4f90342d6c111160d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 5e60e0b2cfe6a3147b82b74a5ed56afc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tubes
+    second: {fileID: 2100000, guid: f1ddbf904945fe04daa49ecb5e17662a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: c0460f96aa19e7543acd06c59f3361cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: unnamed
-    second: {fileID: 2100000, guid: 991e8ac6dea8acd4888586e6aed9a41d, type: 2}
+    second: {fileID: 2100000, guid: 3a4e1e089d02d21499110c5972d387ad, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

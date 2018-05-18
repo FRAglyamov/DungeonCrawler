@@ -4,6 +4,8 @@ using System.Xml.Linq;
 using UnityEngine;
 using System.IO;
 using UnityEngine.AI;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -17,9 +19,13 @@ public class GameController : MonoBehaviour {
     public int corridor;
     public int hall;
     public int endDungeon;
-    public int enemy;
+    public int mEnemy;
+    public int rEnemy;
+    public int oranges;
     public GameObject portal;
+    public GameObject plateWithOranges;
     public GameObject meleeEnemy;
+    public GameObject rangeEnemy;
     public static int roomSize = 4;
     private static GameController _instance;
     public static GameController Instance
@@ -38,33 +44,32 @@ public class GameController : MonoBehaviour {
 
     private void Awake()
     {
-        path = Application.dataPath + "testsave.xml";
+        
     }
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
     {
-        //if (Input.GetButton("Jump")) Save();
-        //if (Input.GetKeyDown(KeyCode.Backspace)) Load();
-        if (!isNavMeshBuild && hall == 0 && corridor == 0 && endDungeon == 0 && enemy == 0)
+        SpawnObjects();
+        if(Time.time>1.5f && Time.time<2f)
         {
-            surface.BuildNavMesh();
-            //Save();
-            isNavMeshBuild = true;
+            corridor = 0;
+            hall = 0;
         }
-        SpawnObjects(isSpawnObjects);
     }
 
-    public void Save()
+    public void Save(string folder)
     {
+        string directory = Application.dataPath + "/.." + "/Saves/" + folder;
+        Directory.CreateDirectory(directory);
+
+
         XElement root = new XElement("root");
-
-
-        foreach(SaveableObjects obj in objects)
+        foreach (SaveableObjects obj in objects)
         {
             root.Add(obj.GetElement());
         }
@@ -72,20 +77,20 @@ public class GameController : MonoBehaviour {
         Debug.Log(root);
 
         XDocument saveDoc = new XDocument(root);
-        File.WriteAllText(path, saveDoc.ToString());
-        Debug.Log(path);
+        File.WriteAllText(directory + "/save.xml", saveDoc.ToString());
+        Debug.Log(directory + "/save.xml");
     }
-
-
-    public void Load()
+    public void Load(string folder)
     {
+        string directory = Application.dataPath + "/.." + "/Saves/" + folder;
+
         isLoad = true;
         XElement root = null;
-        if (File.Exists(path))
+        if (File.Exists(directory + "/save.xml"))
         {
-            root = XDocument.Parse(File.ReadAllText(path)).Element("root");
+            root = XDocument.Parse(File.ReadAllText(directory + "/save.xml")).Element("root");
         }
-        if(root==null)
+        if (root == null)
         {
             Debug.Log("Loading failed");
             return;
@@ -100,7 +105,8 @@ public class GameController : MonoBehaviour {
 
         foreach (SaveableObjects obj in objects)
         {
-            obj.DestroySelf();
+            if (obj.objectName != "Player")
+                obj.DestroySelf();
         }
         foreach (XElement instance in root.Elements("instance"))
         {
@@ -111,43 +117,56 @@ public class GameController : MonoBehaviour {
             position.z = float.Parse(instance.Attribute("z").Value);
             float rotation = float.Parse(instance.Attribute("rotation").Value);
 
-            Instantiate(Resources.Load<GameObject>(instance.Value), position, Quaternion.Euler(0f, rotation, 0f));
-
+            if(instance.Value.ToString() == "Player")
+            {
+                GameObject.FindGameObjectWithTag("Player").transform.position = position;
+            }
+            else
+            {
+                Instantiate(Resources.Load<GameObject>(instance.Value), position, Quaternion.Euler(0f, rotation, 0f));
+            }
         }
-        //GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //if(player!=null)
-        //{
-
-        //}
     }
 
-    void SpawnObjects(bool isSpawnObjects)
+    void SpawnObjects()
     {
-        if (Time.time > 2f && !isSpawnObjects)
+        if (Time.time > 2f && !isSpawnObjects && hall == 0 && corridor == 0)
         {
-            List<SaveableObjects> spawnList = objects;
-            foreach (var item in spawnList)
-            {
-                if (item.objectName != "EndRoom" || item.objectName != "Corridor" || item.objectName != "Hall")
-                {
-                    spawnList.Remove(item);
-                }
-            }
+            isSpawnObjects = true;
 
+
+            List<GameObject> spawnList = GameObject.FindGameObjectsWithTag("Level").ToList();
             for (int i = 0; i < endDungeon; i++)
             {
-                int rnd = Random.Range(0, spawnList.Capacity - i);
-                Instantiate(portal, spawnList[i].transform.position, Quaternion.identity);
+                int rnd = Random.Range(0, spawnList.Count);
+                Instantiate(portal, spawnList[rnd].transform.position, Quaternion.identity);
                 spawnList.Remove(spawnList[rnd]);
             }
-            for (int i = 0; i < enemy; i++)
+            for (int i = 0; i < oranges; i++)
             {
-                int rnd = Random.Range(0, spawnList.Capacity);
-                Instantiate(meleeEnemy, spawnList[i].transform.position, Quaternion.identity);
+                int rnd = Random.Range(0, spawnList.Count);
+                Instantiate(plateWithOranges, spawnList[rnd].transform.position, Quaternion.identity);
                 spawnList.Remove(spawnList[rnd]);
             }
-
-            isSpawnObjects = true;
+            //surface.BuildNavMesh();
+            for (int i = 0; i < mEnemy; i++)
+            {
+                int rnd = Random.Range(0, spawnList.Count);
+                Instantiate(meleeEnemy, spawnList[rnd].transform.position, Quaternion.identity);
+                spawnList.Remove(spawnList[rnd]);
+            }
+            for (int i = 0; i < rEnemy; i++)
+            {
+                int rnd = Random.Range(0, spawnList.Count);
+                Instantiate(rangeEnemy, spawnList[rnd].transform.position, Quaternion.identity);
+                spawnList.Remove(spawnList[rnd]);
+            }
+            surface.RemoveData();
+            surface.BuildNavMesh();
+            
+            isNavMeshBuild = true;
         }
     }
+
+
 }

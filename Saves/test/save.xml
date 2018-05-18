@@ -1,0 +1,35 @@
+<root>
+  <instance x="0" y="0" z="0" rotation="180">StartRoom</instance>
+  <instance x="0" y="0" z="0" rotation="0">Player</instance>
+  <instance x="0" y="0" z="4" rotation="5.008956E-06">Corridor</instance>
+  <instance x="3.496911E-07" y="0" z="8" rotation="5.008956E-06">Hall</instance>
+  <instance x="6.993822E-07" y="0" z="12" rotation="5.008956E-06">Hall</instance>
+  <instance x="4.00000048" y="0" z="7.99999952" rotation="90.00001">Hall</instance>
+  <instance x="-3.99999976" y="0" z="8" rotation="270">Hall</instance>
+  <instance x="1.04907326E-06" y="0" z="16" rotation="5.008956E-06">Hall</instance>
+  <instance x="4.00000048" y="0" z="12" rotation="90.00001">Hall</instance>
+  <instance x="-3.99999928" y="0" z="12" rotation="270">Hall</instance>
+  <instance x="8" y="0" z="7.999999" rotation="90.00001">Corridor</instance>
+  <instance x="4" y="0" z="3.99999976" rotation="180">Corridor</instance>
+  <instance x="-7.99999952" y="0" z="8.000001" rotation="270">Corridor</instance>
+  <instance x="-4.00000048" y="0" z="4" rotation="180">Corridor</instance>
+  <instance x="1.39876443E-06" y="0" z="20" rotation="5.008956E-06">Corridor</instance>
+  <instance x="4.000001" y="0" z="16" rotation="90.00001">Corridor</instance>
+  <instance x="-3.999999" y="0" z="16" rotation="270">Corridor</instance>
+  <instance x="8" y="0" z="12" rotation="90.00001">Hall</instance>
+  <instance x="-7.999999" y="0" z="12.000001" rotation="270">Hall</instance>
+  <instance x="12" y="0" z="7.99999857" rotation="90.00001">Corridor</instance>
+  <instance x="3.99999928" y="0" z="-2.38418579E-07" rotation="180">Hall</instance>
+  <instance x="-11.999999" y="0" z="8.000002" rotation="270">EndRoom</instance>
+  <instance x="-4.000001" y="0" z="0" rotation="180">EndRoom</instance>
+  <instance x="1.74845559E-06" y="0" z="24" rotation="5.008956E-06">EndRoom</instance>
+  <instance x="8.000001" y="0" z="16" rotation="90.00001">Corridor</instance>
+  <instance x="-7.999999" y="0" z="16" rotation="270">EndRoom</instance>
+  <instance x="12" y="0" z="12" rotation="90.00001">EndRoom</instance>
+  <instance x="-11.999999" y="0" z="12.0000019" rotation="270">Corridor</instance>
+  <instance x="16" y="0" z="7.999998" rotation="90.00001">EndRoom</instance>
+  <instance x="3.99999857" y="0" z="-4" rotation="180">EndRoom</instance>
+  <instance x="7.999999" y="0" z="-9.127682E-07" rotation="90.00001">EndRoom</instance>
+  <instance x="12.000001" y="0" z="16" rotation="90.00001">EndRoom</instance>
+  <instance x="-15.999999" y="0" z="12.0000029" rotation="270">EndRoom</instance>
+</root>

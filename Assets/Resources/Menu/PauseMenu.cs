@@ -54,6 +54,18 @@ public class PauseMenu : MonoBehaviour {
         Application.Quit();
     }
 
+    public void OnOff(GameObject go)
+    {
+        if(go.activeInHierarchy)
+        {
+            go.SetActive(false);
+        }
+        else
+        {
+            go.SetActive(true);
+        }
+    }
+
     public GameObject minimap;
     public GameObject map;
     public Camera mapCamera;

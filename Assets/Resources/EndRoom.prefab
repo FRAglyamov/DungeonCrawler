@@ -26,7 +26,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 0
 --- !u!1 &1274294176332348
 GameObject:
@@ -72,15 +72,14 @@ GameObject:
   - component: {fileID: 23343917385572190}
   - component: {fileID: 64043720002147718}
   - component: {fileID: 114741616050302056}
-  - component: {fileID: 114176519726327946}
   - component: {fileID: 65541326053998712}
   - component: {fileID: 114981018007268382}
   m_Layer: 0
   m_Name: EndRoom
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4484626366351042
 Transform:
@@ -281,19 +280,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114176519726327946
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1968939394127094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8269856b60abbb44eb8fb8f0ffb1d186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portal: {fileID: 1940358962711456, guid: 70487f59fd3c39545a8a80b7600099b3, type: 2}
-  enemy: {fileID: 1816031434445232, guid: 05ee764cd58ed8a41922b3f6aac2d5de, type: 2}
 --- !u!114 &114741616050302056
 MonoBehaviour:
   m_ObjectHideFlags: 1

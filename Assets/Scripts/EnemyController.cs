@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour {
     float attackRate = 1f;
     float nextAttackTime = 1f;
 
+    AudioManager audioManager;
 
     void Start ()
     {
@@ -22,6 +23,8 @@ public class EnemyController : MonoBehaviour {
 
         anim = GetComponent<Animator>();
 
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+
     }
 	
 	void Update ()
@@ -30,35 +33,31 @@ public class EnemyController : MonoBehaviour {
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        //MoveToPlayer();
+        if(agent.remainingDistance<0.1f)
+        {
+            anim.SetBool("IsWalk", false);
+            anim.SetBool("IsRun", false);
+        }
+        MoveToPlayer();
         Attack();
         Death();
 	}
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag=="Player")
-        {
-            player = other.gameObject;
-            MoveToPlayer();
-        }
-    }
-
     void MoveToPlayer()
     {
-        agent.SetDestination(player.transform.position);
-        if (agent.steeringTarget != null)
+        float distance = Vector3.Distance(player.transform.position, transform.position);
+        if (distance <= 4f)
         {
+            agent.SetDestination(player.transform.position);
             anim.SetBool("IsWalk", true);
             anim.SetBool("IsRun", true);
         }
     }
     void Attack()
     {
-        if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 1f && Time.time > nextAttackTime)
+        if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 1.5f && Time.time > nextAttackTime)
         {
             anim.SetTrigger("Attack_1");
+            audioManager.Play("EnemyAttack");
             nextAttackTime = Time.time + attackRate;
             player.GetComponent<PlayerController>().Damaged(10);
         }
@@ -70,6 +69,7 @@ public class EnemyController : MonoBehaviour {
             anim.SetTrigger("Dead");
             gameObject.GetComponent<EnemyController>().enabled = false;
             agent.enabled = false;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
             Destroy(gameObject, 10f);
         }
     }
