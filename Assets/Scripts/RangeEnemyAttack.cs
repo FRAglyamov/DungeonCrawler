@@ -11,6 +11,11 @@ public class RangeEnemyAttack : MonoBehaviour {
     private void Update()
     {
         transform.position += transform.forward * Time.deltaTime * 4f;
+        
+    }
+    private void FixedUpdate()
+    {
+        //gameObject.GetComponent<Rigidbody>().velocity = transform.forward * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
