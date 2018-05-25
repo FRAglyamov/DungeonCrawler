@@ -22,8 +22,12 @@ public class GameController : MonoBehaviour {
     public int mEnemy;
     public int rEnemy;
     public int oranges;
+    public int orbs;
+    public int spikes;
     public GameObject portal;
     public GameObject plateWithOranges;
+    public GameObject orb;
+    public GameObject spike;
     public GameObject meleeEnemy;
     public GameObject rangeEnemy;
     public static int roomSize = 4;
@@ -146,6 +150,18 @@ public class GameController : MonoBehaviour {
             {
                 int rnd = Random.Range(0, spawnList.Count);
                 Instantiate(plateWithOranges, spawnList[rnd].transform.position, Quaternion.identity);
+                spawnList.Remove(spawnList[rnd]);
+            }
+            for (int i = 0; i < orbs; i++)
+            {
+                int rnd = Random.Range(0, spawnList.Count);
+                Instantiate(orb, spawnList[rnd].transform.position, Quaternion.identity);
+                spawnList.Remove(spawnList[rnd]);
+            }
+            for (int i = 0; i < spikes; i++)
+            {
+                int rnd = Random.Range(0, spawnList.Count);
+                Instantiate(spike, spawnList[rnd].transform.position, Quaternion.identity);
                 spawnList.Remove(spawnList[rnd]);
             }
             //surface.BuildNavMesh();

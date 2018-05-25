@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class RangeEnemyAttack : MonoBehaviour {
 
+    private Rigidbody _rb;
+
+    public Rigidbody rb
+    {
+        get
+        {
+            if (_rb == null)
+            {
+                _rb = GetComponent<Rigidbody>();
+            }
+            return _rb;
+        }
+    }
+
     private void Start()
     {
         Destroy(gameObject, 2f);
     }
     private void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * 4f;
+        //transform.position += transform.forward * Time.deltaTime * 4f;
         
     }
     private void FixedUpdate()
     {
-        //gameObject.GetComponent<Rigidbody>().velocity = transform.forward * Time.deltaTime;
+        rb.velocity = transform.forward * 5f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,6 +42,6 @@ public class RangeEnemyAttack : MonoBehaviour {
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

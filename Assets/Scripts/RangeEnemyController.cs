@@ -72,7 +72,7 @@ public class RangeEnemyController : MonoBehaviour
         {
             nextAttackTime = Time.time + attackRate;
             audioManager.Play("RangeEnemyAttack");
-            Instantiate(rangeEnemyAttack, transform.position + transform.forward*1f, transform.rotation);
+            Instantiate(rangeEnemyAttack, transform.position + transform.forward*1f + transform.up*1f, transform.rotation);
         }
     }
     void Death()

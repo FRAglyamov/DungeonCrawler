@@ -130,6 +130,10 @@ ModelImporter:
     100244: RangeEnemy_Attack
     100246: Circle
     100248: Plate_with_oranges
+    100250: Orb
+    100252: Spikes
+    100254: Spikes_001
+    100256: Spikes_002
     400000: Base
     400002: Corridor
     400004: Cube_003
@@ -255,6 +259,10 @@ ModelImporter:
     400244: RangeEnemy_Attack
     400246: Circle
     400248: Plate_with_oranges
+    400250: Orb
+    400252: Spikes
+    400254: Spikes_001
+    400256: Spikes_002
     2300000: Base
     2300002: Corridor
     2300004: Cube_003
@@ -274,6 +282,10 @@ ModelImporter:
     2300032: RangeEnemy_Attack
     2300034: Circle
     2300036: Plate_with_oranges
+    2300038: Orb
+    2300040: Spikes
+    2300042: Spikes_001
+    2300044: Spikes_002
     3300000: Base
     3300002: Corridor
     3300004: Cube_003
@@ -293,6 +305,10 @@ ModelImporter:
     3300032: RangeEnemy_Attack
     3300034: Circle
     3300036: Plate_with_oranges
+    3300038: Orb
+    3300040: Spikes
+    3300042: Spikes_001
+    3300044: Spikes_002
     4300000: EndRoom
     4300002: Base
     4300004: Corridor
@@ -313,6 +329,10 @@ ModelImporter:
     4300034: RangeEnemy_Attack
     4300036: Circle
     4300038: Plate_with_oranges
+    4300040: Spikes
+    4300042: Orb
+    4300044: Spikes_001
+    4300046: Spikes_002
     7400000: Default Take
     9500000: //RootNode
     13700000: Character_001
@@ -340,6 +360,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Orb
+    second: {fileID: 2100000, guid: c8bb41dd17e99dd4a9029ac8b7a41af0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OrbPostament
+    second: {fileID: 2100000, guid: e302dd7e81e42c3418162eb35776a744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Plate
     second: {fileID: 2100000, guid: 562254e4c72832846a946777b05db2a8, type: 2}
   - first:
@@ -357,6 +387,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Red
     second: {fileID: 2100000, guid: 5e60e0b2cfe6a3147b82b74a5ed56afc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spikes
+    second: {fileID: 2100000, guid: 14ceb436160669c43b41dde6d90d1579, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
