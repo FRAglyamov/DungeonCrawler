@@ -134,7 +134,7 @@ public class GameController : MonoBehaviour {
 
     void SpawnObjects()
     {
-        if (Time.time > 2f && !isSpawnObjects && hall == 0 && corridor == 0)
+        if (!isSpawnObjects && Time.time > 2f && hall == 0 && corridor == 0)
         {
             isSpawnObjects = true;
 

@@ -53,7 +53,7 @@ public class ErikaController : MonoBehaviour
             curHealth = maxHealth;
         }
         Attack();
-        //RangeAttack();
+        RangeAttack();
         Death();
     }
 

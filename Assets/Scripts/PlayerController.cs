@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 
     
     public float speed = 5f;
-    public float turningSpeed = 5f;
+    public float turningSpeed = 3f;
 
     private int maxHealth = 100;
     public int curHealth = 100;
